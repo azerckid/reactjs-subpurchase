@@ -15,7 +15,11 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 const SwiperContainer = styled.div`
   width: 100vw;
-  height: 500px;
+  height: 800px;
+  @media screen and (max-width: 912px) {
+    color: red;
+    height: 300px;
+  }
 `;
 
 function SwiperHome() {
@@ -30,7 +34,7 @@ function SwiperHome() {
         // pagination={{
         //   clickable: true,
         // }}
-        navigation={true}
+        // navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         // className="mySwiper"
       >

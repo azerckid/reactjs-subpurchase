@@ -52,7 +52,6 @@ const Disclaimer = styled.div`
   @media screen and (max-width: 9120px) {
     color: red;
     width: 100vw;
-    flex-direction: column;
   }
 `;
 
