@@ -26,14 +26,13 @@ function SwiperHome() {
         centeredSlides={true}
         autoplay={{
           delay: 2500,
-          disableOnInteraction: false,
         }}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
-        className="mySwiper"
+        // className="mySwiper"
       >
         <SwiperSlide>Slide 1</SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
