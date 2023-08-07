@@ -1,9 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import { NaviBar } from "./components/layOut/NaviBar";
 import Home from "./scene/Home";
 import Product from "./scene/Product";
 import Search from "./scene/Search";
-import { NaviBar } from "./components/layOut/NaviBar";
+import Footer from "./components/layOut/Footer";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="/product" element={<Product />} />
         <Route path="/search" element={<Search />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 };
