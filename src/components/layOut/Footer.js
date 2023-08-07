@@ -16,6 +16,10 @@ const FooterInfo = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 360px) {
+    color: red;
+    width: 100vw;
+  }
 `;
 const CompanyInfo = styled.div`
   width: 1024px;
@@ -24,10 +28,20 @@ const CompanyInfo = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 912px) {
+    color: red;
+    width: 100vw;
+    flex-direction: column;
+  }
 `;
 const CompanyInfoItem = styled.div`
   width: 500px;
   height: 300px;
+  @media screen and (max-width: 9120px) {
+    color: red;
+    width: 100vw;
+    flex-direction: column;
+  }
 `;
 const Disclaimer = styled.div`
   width: 1024px;
@@ -35,6 +49,11 @@ const Disclaimer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  @media screen and (max-width: 9120px) {
+    color: red;
+    width: 100vw;
+    flex-direction: column;
+  }
 `;
 
 function Footer() {

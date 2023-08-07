@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Swiper from "../components/swiper/Swiper";
 
 const HomeContainer = styled.div`
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +21,14 @@ const HomeBoxContainer = styled.div`
 const HomeBox = styled.div`
   width: 1024px;
   margin: 50px 0;
+  display: flex;
+  flex-direction: column;
   /* background-color: yellowgreen; */
+  @media screen and (max-width: 912px) {
+    color: red;
+    width: 100vw;
+    flex-direction: column;
+  }
 `;
 const Title = styled.div`
   margin-bottom: 20px;
@@ -31,6 +39,11 @@ const ServiceBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 912px) {
+    color: red;
+    width: 100vw;
+    flex-direction: column;
+  }
 `;
 const ServiceBoxItem = styled.div`
   width: ${(props) => props.width}px;
@@ -40,6 +53,12 @@ const ServiceBoxItem = styled.div`
   align-items: center;
   border-radius: 20px;
   background-color: pink;
+  @media screen and (max-width: 912px) {
+    width: 100vw;
+    margin: 10px 10px;
+    color: red;
+    flex-direction: column;
+  }
 `;
 
 const Home = () => {
