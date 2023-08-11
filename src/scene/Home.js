@@ -64,13 +64,15 @@ const ServiceBoxItem = styled.div`
 
 const Home = () => {
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   return (
     <HomeContainer>
       <Swiper></Swiper>
       <HomeBoxContainer>
         <HomeBox>
-          <Title>WELCOME {location.state.id}</Title>
+          <Title>
+            {location?.state?.id ? "  WELCOME" + location.state.id : null}
+          </Title>
           <Title>our service </Title>
           <ServiceBox>
             <ServiceBoxItem width={330} height={330}>
