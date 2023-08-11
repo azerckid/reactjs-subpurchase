@@ -25,6 +25,7 @@ export const NaviBar = () => {
       <NaviLink to={"/"}>Home</NaviLink>
       <NaviLink to={"/product"}>Product</NaviLink>
       <NaviLink to={"/search"}>Search</NaviLink>
+      <NaviLink to={"/login"}>Login</NaviLink>
     </NaviContainer>
   );
 };
