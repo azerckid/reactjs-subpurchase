@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Swiper from "../components/swiper/Swiper";
+import { useLocation } from "react-router-dom";
 
 const HomeContainer = styled.div`
   width: 100vw;
@@ -62,12 +63,15 @@ const ServiceBoxItem = styled.div`
 `;
 
 const Home = () => {
+  const location = useLocation();
+  console.log(location);
   return (
     <HomeContainer>
       <Swiper></Swiper>
       <HomeBoxContainer>
         <HomeBox>
-          <Title>our service</Title>
+          <Title>WELCOME {location.state.id}</Title>
+          <Title>our service </Title>
           <ServiceBox>
             <ServiceBoxItem width={330} height={330}>
               service1

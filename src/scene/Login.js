@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-// eslint-disable-next-line
 import axios from "axios";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginContainer = styled.div`
   width: 100vw;
@@ -38,6 +37,33 @@ function Login() {
   const [PW, setPW] = useState("");
   const [Email, setEmail] = useState("");
 
+  const history = useNavigate();
+
+  const submit = async (e) => {
+    e.preventDefault();
+    const loginData = {
+      id: ID,
+      pw: PW,
+      email: Email,
+    };
+    console.log(loginData);
+    console.log(process.env.REACT_APP_API_URL);
+    try {
+      const response = await axios
+        .post(process.env.REACT_APP_API_URL + "/user/login", loginData)
+        .then((res) => {
+          if (res.data.message === "Login Success") {
+            history("/", { state: { id: ID } });
+          } else {
+            alert("로그인 실패");
+          }
+          console.log(response);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <LoginContainer>
       <LoginTitle>로그인</LoginTitle>
@@ -69,9 +95,9 @@ function Login() {
             console.log(Email);
           }}
         />
-        <LoginInput type="submit" value="로그인" />
+        <LoginInput type="submit" value="로그인" onClick={submit} />
       </LoginForm>
-      <Link to={"/signup"}>회원가입</Link>
+      <Link to={"/signup"}>go to the signup page</Link>
     </LoginContainer>
   );
 }

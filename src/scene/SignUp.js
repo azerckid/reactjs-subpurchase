@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-// eslint-disable-next-line
 import axios from "axios";
 import styled from "styled-components";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUpContainer = styled.div`
   width: 100vw;
@@ -37,9 +37,37 @@ function SignUp() {
   const [PW, setPW] = useState("");
   const [Email, setEmail] = useState("");
 
+  const history = useNavigate();
+
+  const submit = async (e) => {
+    e.preventDefault();
+    const signUpData = {
+      id: ID,
+      pw: PW,
+      email: Email,
+    };
+    console.log(signUpData);
+    try {
+      const response = await axios
+        .post(process.env.REACT_APP_API_URL + "/user/signup", signUpData)
+        .then((res) => {
+          if (res.data.message === "User created") {
+            alert("회원가입 성공");
+            history("/login");
+          }
+          if (res.data.message === "User already exists") {
+            alert("이미 존재하는 아이디입니다.");
+          }
+          console.log(response);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <SignUpContainer>
-      <SignUpTitle>로그인</SignUpTitle>
+      <SignUpTitle>SignUP</SignUpTitle>
       <SignUpForm>
         <SignUpInput
           name=""
@@ -68,8 +96,9 @@ function SignUp() {
             console.log(Email);
           }}
         />
-        <SignUpInput type="submit" value="로그인" />
+        <SignUpInput type="submit" value="회원가입" onClick={submit} />
       </SignUpForm>
+      <Link to={"/login"}>go to the login page</Link>
     </SignUpContainer>
   );
 }
