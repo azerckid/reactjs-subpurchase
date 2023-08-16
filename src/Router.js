@@ -7,6 +7,7 @@ import Product from "./scene/Product";
 import Search from "./scene/Search";
 import Login from "./scene/Login";
 import SingUp from "./scene/SignUp";
+import Excel from "./scene/Excel";
 
 const Router = () => {
   return (
@@ -18,6 +19,7 @@ const Router = () => {
         <Route path="/search" element={<Search />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SingUp />} />
+        <Route path="/excel" element={<Excel />} />
       </Routes>
       <Footer />
     </BrowserRouter>
